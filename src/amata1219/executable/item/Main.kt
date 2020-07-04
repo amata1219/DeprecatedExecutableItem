@@ -11,6 +11,8 @@ class Main : JavaPlugin() {
 
     }
 
+    val itemMap: Map<Int, Item> = mutableMapOf()
+
     override fun onEnable() {
         INSTANCE = this
     }
