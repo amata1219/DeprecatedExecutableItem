@@ -1,6 +1,7 @@
 package amata1219.executable.item.command
 
 import amata1219.executable.item.Main
+import amata1219.executable.item.Tick
 import org.bukkit.Server
 import org.bukkit.entity.Player
 

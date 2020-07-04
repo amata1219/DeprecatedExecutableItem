@@ -1,4 +1,4 @@
-package amata1219.executable.item.command
+package amata1219.executable.item
 
 class Tick(val value: Long) {
 

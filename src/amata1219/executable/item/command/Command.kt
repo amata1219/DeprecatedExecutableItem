@@ -1,5 +1,6 @@
 package amata1219.executable.item.command
 
+import amata1219.executable.item.Tick
 import amata1219.executable.item.extension.runTaskLater
 import amata1219.executable.item.placeholder.PlaceholderReplacer
 import org.bukkit.entity.Player
