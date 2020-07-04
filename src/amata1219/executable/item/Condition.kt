@@ -1,20 +1,23 @@
 package amata1219.executable.item
 
-enum class Trigger {
+enum class Condition {
 
-    MAIN_HAND,
-    LEFT_HAND,
     CLICK,
     RIGHT_CLICK,
     LEFT_CLICK,
+    SWAP,
+    CONSUME,
+    JUMP,
+
+    MAIN_HAND,
+    LEFT_HAND,
     AIR,
     BLOCK,
     LIQUID,
     ENTITY,
-    SWAP,
-    CONSUME,
-    JUMP,
+
     SNEAKING,
-    SPRINTING;
+    SPRINTING,
+    SWIMMING;
 
 }

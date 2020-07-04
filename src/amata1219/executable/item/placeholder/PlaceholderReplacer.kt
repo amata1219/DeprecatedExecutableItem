@@ -1,6 +1,4 @@
-package amata1219.executable.item.placeholder.replacer
-
-import amata1219.executable.item.placeholder.Placeholder
+package amata1219.executable.item.placeholder
 
 class PlaceholderReplacer<T>(private val target: T, private val placeholders: List<Placeholder<T>>) {
 

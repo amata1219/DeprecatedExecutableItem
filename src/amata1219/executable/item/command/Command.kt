@@ -1,7 +1,7 @@
 package amata1219.executable.item.command
 
 import amata1219.executable.item.extension.runTaskLater
-import amata1219.executable.item.placeholder.replacer.PlaceholderReplacer
+import amata1219.executable.item.placeholder.PlaceholderReplacer
 import org.bukkit.entity.Player
 
 abstract class Command (private val baseText: String, private val delayTicks: Tick) {
