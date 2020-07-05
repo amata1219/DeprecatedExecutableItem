@@ -16,6 +16,6 @@ abstract class Command (private val baseText: String, private val delayTicks: Ti
         }
     }
 
-    abstract fun execute(executor: Player, commandText: String)
+    protected abstract fun execute(executor: Player, commandText: String)
 
 }

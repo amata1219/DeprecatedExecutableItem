@@ -9,7 +9,9 @@ import org.bukkit.entity.Player
 import org.bukkit.event.Cancellable
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.block.Action
 import org.bukkit.event.player.PlayerEvent
+import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerQuitEvent
 import org.bukkit.inventory.ItemStack
@@ -62,5 +64,16 @@ class ExecutingItemListener : Listener {
     fun onPlayerQuit(event: PlayerQuitEvent){
         playerUniqueIdsToItemCooldownInformationMaps.remove(event.player.uniqueId)
     }
+
+    @EventHandler
+    fun onPlayerInteract(event: PlayerInteractEvent){
+        if (event.action == Action.PHYSICAL) return
+
+    }
+    /*
+    list[condition] = (hand-type, click, click-type, clicked-type)
+    water clicking - from clicking with a bucket processing
+    create replacers(player, block, entity)
+     */
 
 }
