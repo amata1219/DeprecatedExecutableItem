@@ -9,7 +9,7 @@ import org.bukkit.entity.Player
 import java.lang.reflect.Field
 import java.lang.reflect.Method
 
-class UnpermittedCommand(baseText: String, delay: Tick) : Command(baseText, delay) {
+class PermissionlessCommand(baseText: String, delay: Tick) : Command(baseText, delay) {
 
     companion object {
 
@@ -35,7 +35,7 @@ class UnpermittedCommand(baseText: String, delay: Tick) : Command(baseText, dela
         val commandMap: SimpleCommandMap = simpleCommandMap.invoke(Main.INSTANCE.server) as SimpleCommandMap
         val command: org.bukkit.command.Command = commandMap.getCommand(label) ?: return
         val execution: CommandExecutor = commandExecutor.get(command) as CommandExecutor
-        val args: Array<String> = parts.slice(1 until parts.size).toTypedArray()
+        val args: Array<String> = parts.drop(1).toTypedArray()
         execution.onCommand(executor, command, label, args)
     }
 
