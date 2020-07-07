@@ -9,6 +9,14 @@ enum class PlayerPlaceholder(
 ) : Placeholder<Player> {
 
     NAME("name", Player::getName),
-    DISPLAY_NAME("display-name", Player::getDisplayName)
+    DISPLAY_NAME("display-name", Player::getDisplayName);
+
+    companion object {
+
+        private val PLACEHOLDERS: List<Placeholder<Player>> = values().toList()
+
+        fun of(target: Player): PlaceholderReplacer<Player> = PlaceholderReplacer(target, PLACEHOLDERS)
+
+    }
 
 }

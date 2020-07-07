@@ -24,7 +24,6 @@ class PermissionlessCommand(baseText: String, delay: Tick) : Command(baseText, d
             val pluginCommand: Class<PluginCommand> = PluginCommand::class.java
             commandExecutor = pluginCommand.getDeclaredField("executor")
             commandExecutor.isAccessible = true
-
         }
 
     }

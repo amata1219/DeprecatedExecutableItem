@@ -10,10 +10,7 @@ import org.bukkit.event.Cancellable
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
-import org.bukkit.event.player.PlayerEvent
-import org.bukkit.event.player.PlayerInteractEvent
-import org.bukkit.event.player.PlayerJoinEvent
-import org.bukkit.event.player.PlayerQuitEvent
+import org.bukkit.event.player.*
 import org.bukkit.inventory.ItemStack
 import java.text.SimpleDateFormat
 import java.util.*
@@ -56,19 +53,23 @@ class ExecutingItemListener : Listener {
     }
 
     @EventHandler
-    fun onPlayerJoin(event: PlayerJoinEvent){
+    fun onPlayerJoin(event: PlayerJoinEvent) {
         playerUniqueIdsToItemCooldownInformationMaps[event.player.uniqueId] = mutableMapOf()
     }
 
     @EventHandler
-    fun onPlayerQuit(event: PlayerQuitEvent){
+    fun onPlayerQuit(event: PlayerQuitEvent) {
         playerUniqueIdsToItemCooldownInformationMaps.remove(event.player.uniqueId)
     }
 
     @EventHandler
-    fun onPlayerInteract(event: PlayerInteractEvent){
-        if (event.action == Action.PHYSICAL) return
+    fun onPlayerInteract(event: PlayerInteractEvent) {
+        if (event.action == Action.PHYSICAL || !event.hasItem()) return
 
+    }
+
+    @EventHandler
+    fun onPlayerConsume(event: PlayerItemConsumeEvent) {
     }
     /*
     list[condition] = (hand-type, click, click-type, clicked-type)
